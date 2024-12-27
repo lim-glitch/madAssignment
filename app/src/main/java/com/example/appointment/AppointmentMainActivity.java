@@ -11,13 +11,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class AppointmentMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_appointment);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         radiologyCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainActivity.this, Radiology.class);
+                Intent it = new Intent(AppointmentMainActivity.this, Radiology.class);
                 it.putExtra("title", "Radiology");
                 startActivity(it);
             }
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         neurologyCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainActivity.this, Neurology.class);
+                Intent it = new Intent(AppointmentMainActivity.this, Neurology.class);
                 it.putExtra("title", "Neurology");
                 startActivity(it);
             }
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         cardiologyCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainActivity.this, Cardiology.class);
+                Intent it = new Intent(AppointmentMainActivity.this, Cardiology.class);
                 it.putExtra("title", "Cardiology");
                 startActivity(it);
             }
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         dermatologyCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainActivity.this, Dermatology.class);
+                Intent it = new Intent(AppointmentMainActivity.this, Dermatology.class);
                 it.putExtra("title", "Dermatology");
                 startActivity(it);
             }

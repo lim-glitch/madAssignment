@@ -28,7 +28,7 @@
             android:name=".Radiology"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".AppointmentMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
