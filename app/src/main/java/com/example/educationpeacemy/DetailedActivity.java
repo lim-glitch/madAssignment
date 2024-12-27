@@ -20,7 +20,7 @@ public class DetailedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityDetailedBinding.inflate(getLayoutInflater());
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_detailed);
+        setContentView(binding.getRoot());
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);

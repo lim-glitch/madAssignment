@@ -11,13 +11,15 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.educationpeacemy.databinding.ActivityMainBinding;
+import com.example.educationpeacemy.databinding.ActivityMainEduBinding;
+import com.example.educationpeacemy.databinding.ActivityMainEduBinding;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class EduMainActivity extends AppCompatActivity {
 
-    ActivityMainBinding binding;
+
+    ActivityMainEduBinding binding;
     ListAdapter listAdapter;
     ArrayList<ListData> dataArrayList = new ArrayList<ListData>();
     ListData listData;
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityMainEduBinding.inflate(getLayoutInflater());
         EdgeToEdge.enable(this);
         setContentView(binding.getRoot());
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        int[] iconList = {R.drawable.ic_diabetes, R.drawable.ic_hypertension, R.drawable.ic_asthma, R.drawable.ic_celiac_disease, R.drawable.ic_migraine, R.drawable.ic_osteoporosis, R.drawable.ic_depression, R.drawable.ic_anemia, R.drawable.ic_tuberculosis, R.drawable.ic_dengue, R.drawable.ic_malaria, R.drawable.ic_obesity, R.drawable.ic_hepatitis_b, R.drawable.ic_covid, R.drawable.ic_alzheimer};
         int[] imageList = {R.drawable.diabetes_mellitus, R.drawable.hypertension, R.drawable.asthma, R.drawable.celiac_disease, R.drawable.migraine, R.drawable.osteoporosis, R.drawable.depression, R.drawable.anemia, R.drawable.tuberculosis, R.drawable.dengue_fever, R.drawable.malaria, R.drawable.obesity, R.drawable.hepatitis_b, R.drawable.covid_19, R.drawable.alzheimers_disease};
         int[] descList = {R.string.diabetes_desc, R.string.hypertension_desc, R.string.asthma_desc, R.string.celiac_disease_desc, R.string.migraine_desc, R.string.osteoporosis_desc, R.string.depression_desc, R.string.anemia_desc, R.string.tuberculosis_desc, R.string.dengue_fever_desc, R.string.malaria_desc, R.string.obesity_desc, R.string.hepatitis_b_desc, R.string.covid_19_desc, R.string.alzheimers_disease_desc};
         int[] symptomsList = {R.string.diabetes_symptoms, R.string.hypertension_symptoms, R.string.asthma_symptoms, R.string.celiac_disease_symptoms, R.string.migraine_symptoms, R.string.osteoporosis_symptoms, R.string.depression_symptoms, R.string.anemia_symptoms, R.string.tuberculosis_symptoms, R.string.dengue_fever_symptoms, R.string.malaria_symptoms, R.string.obesity_symptoms, R.string.hepatitis_b_symptoms, R.string.covid_19_symptoms, R.string.alzheimers_disease_symptoms};
@@ -42,23 +45,24 @@ public class MainActivity extends AppCompatActivity {
 
 
         for (int i = 0; i < imageList.length; i++) {
-            listData = new ListData(nameList[i], imageList[i], descList[i], symptomsList[i], treatmentList[i]);
+            listData = new ListData(nameList[i], imageList[i], descList[i], symptomsList[i], treatmentList[i], iconList[i]);
             dataArrayList.add(listData);
         }
 
-        listAdapter = new ListAdapter(MainActivity.this, dataArrayList);
+        listAdapter = new ListAdapter(EduMainActivity.this, dataArrayList);
         binding.listview.setAdapter(listAdapter);
         binding.listview.setClickable(true);
 
         binding.listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(MainActivity.this, DetailedActivity.class);
+                Intent intent = new Intent(EduMainActivity.this, DetailedActivity.class);
                 intent.putExtra("name", nameList[i]);
                 intent.putExtra("image", imageList[i]);
                 intent.putExtra("desc", descList[i]);
                 intent.putExtra("symptoms", symptomsList[i]);
                 intent.putExtra("treatment", treatmentList[i]);
+                intent.putExtra("icon", iconList[i]);
                 startActivity(intent);
             }
         });

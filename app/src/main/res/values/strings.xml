@@ -87,7 +87,7 @@
     <string name="covid_19_treatment">1. Medications: Antivirals (e.g., Remdesivir)\n2. Prevention: Vaccination, mask-wearing, hand hygiene</string>
 
     //healthProblem 15: Alzheimer's Disease
-    <string name="alzheimers_disease">Alzheimer's Disease</string>
+    <string name="alzheimers_disease">Alzheimer\'s Disease</string>
     <string name="alzheimers_disease_desc">A progressive neurological disorder causing memory loss and cognitive decline.</string>
     <string name="alzheimers_disease_symptoms">1. Memory loss\n2. Confusion\n3. Difficulty completing familiar tasks\n4. Mood changes\n5. Difficulty speaking or writing</string>
     <string name="alzheimers_disease_treatment">1. Medications: Donepezil, Memantine\n2. Lifestyle: Cognitive therapy, supportive care</string>
