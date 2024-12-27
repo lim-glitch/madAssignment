@@ -17,7 +17,7 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:id="@+id/listImage"
+            android:id="@+id/listIconImage"
             android:src="@drawable/ic_diabetes"
             android:scaleType="centerCrop"
             android:layout_marginStart="10dp"
@@ -34,6 +34,6 @@
             android:textSize="20sp"
             android:layout_marginTop="25dp"
             android:layout_marginStart="30dp"
-            android:layout_toEndOf="@id/listImage"/>
+            android:layout_toEndOf="@id/listIconImage"/>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

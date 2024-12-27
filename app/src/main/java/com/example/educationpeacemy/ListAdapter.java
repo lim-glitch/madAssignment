@@ -27,10 +27,10 @@ public class ListAdapter extends ArrayAdapter<ListData>{
             view = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
 
-        ImageView listImage = view.findViewById(R.id.listImage);
+        ImageView listImage = view.findViewById(R.id.listIconImage);
         TextView listName = view.findViewById(R.id.listName);
 
-        listImage.setImageResource(listData.image);
+        listImage.setImageResource(listData.icon);
         listName.setText(listData.name);
 
         return view;
