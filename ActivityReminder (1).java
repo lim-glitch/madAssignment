@@ -59,6 +59,7 @@ public class ActivityReminder extends AppCompatActivity {
                 medicationDetails.append("Name: ").append(medication.getName())
                         .append("\nDosage: ").append(medication.getDosage())
                         .append("\nFrequency: ").append(medication.getFrequency())
+                        .append("\nTime taken: ").append(medication.getTimeTaken())
                         .append("\n\n");
             }
 
